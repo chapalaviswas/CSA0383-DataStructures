@@ -1,0 +1,87 @@
+#include<stdio.h>
+int stack[100],choice,n,top,x,i;
+void push(void)
+;
+void pop(void);
+void display(void);
+int main()
+{
+top=-1;
+printf("enter the size of STACK[MAX=100]:");
+scanf("%d",&n);
+printf("\n\t STACK OPERATIONS USING AYRRAY");
+printf("\n\t-------=");
+printf("\n\t 1.PUSH\n\t 2.POP\n\t 3.DISPLAY\n\t 4.EXIT");
+do{
+printf("enter the choice:");
+scanf("%d",&choice);
+switch(choice);
+{
+case1:
+{
+push();
+break;
+}
+case2:
+{
+pop();
+break;
+}
+case3:
+{
+display();
+break;
+}
+case4:
+{
+printf("EXIT POINT");
+break;
+}
+{
+default:
+printf("please enter a valid choice(1/2/3/4)");
+}
+}
+}
+while(choice!=4);
+return 0;
+}
+void push()
+{
+if(top>=n-1)
+{
+printf("STACK is over flow");
+}
+else
+{
+printf("enter a value to be pushed:");
+scanf("%d",&x);
+top++;
+stack[top]=x;
+}
+}
+void pop()
+{
+if(top<=-1)
+{
+printf("stack is under flow");
+}
+else
+{
+printf("The popped elements is %d",stack[top]);
+top--;
+}
+}
+void dislay()
+{
+if(top>=0)
+{
+printf("The element in STACK");
+for(i=top;i>=0;i--)
+printf("%d",stack[i]);
+}
+else
+{
+printf("The STACK is empty");
+}
+}
